@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ページ2</title>
+  <script>
+    function checkAnswer() {
+      var userInput = document.getElementById("userInput").value.toLowerCase();
+      var correctWord = "banana";
+
+      if (userInput === correctWord) {
+        document.getElementById("result").innerHTML = "正解です！";
+        document.getElementById("image").src = "正解の画像のURL";
+      } else {
+        document.getElementById("result").innerHTML = "不正解です。もう一度お試しください。";
+        document.getElementById("userInput").disabled = true;
+        setTimeout(function() {
+          document.getElementById("userInput").disabled = false;
+        }, 10000);
+      }
+    }
+    window.onload = function() {
+      document.getElementById("userInput").disabled = true;
+    };
+    setTimeout(function() {
+          document.getElementById("userInput").disabled = false;
+        }, 5000);
+  </script>
+</head>
+<body>
+  <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/exp_numarea.png?raw=true" alt="画像1">
+  <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/numarea.png?raw=true" alt="画像2">
+  <div>
+    <input type="text" id="userInput" placeholder="ワードを入力">
+    <button onclick="checkAnswer()">確認</button>
+    <p id="result"></p>
+  </div>
+  <a href="1st.html">1</a>
+  <a href="2nd.html">2</a>
+  <a href="3rd.html">3</a>
+  <a href="4th.html">4</a>
+  <a href="5th.html">最終問題</a>
+</body>
+</html>

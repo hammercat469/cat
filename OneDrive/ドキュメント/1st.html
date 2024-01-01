@@ -8,8 +8,20 @@
       var correctWord = "123";
 
       if (userInput === correctWord) {
-        document.getElementById("result").innerHTML = "正解です！";
-        document.getElementById("image").src = "https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG9KudaAJA-AxM9T8Ka9uAaj79e1qGGULCTlj8exHiROtghelQTs-OEHjqIAELa3LOxWG3x30dS8TRnzGqlBKWbpg8jL5jYPRlMYgmUBqsuBUKRuSqMqzACO4FViJGJOSzpXO5rdzgyOgMDCeAKIr_pdYVXTT5_BiRdSWfoWP9ynIdIL5M_75aKCUR8knTA7A4BJ8TJbtDzaMVwoXVAbTUyHHeoa6rHMBj2-5fEORTXvbgrLNsWm8MaUPJRuehatKcvWAzgenNmvh6r_uHynO9bI=/9cd6656fdf742bb38feeb9f03c314725_t.jpeg";
+        document.getElementById("result").innerHTML = "正解   ヒントは下部に表示されてます";
+
+        var image1 = document.createElement("img");
+        image1.src = "https://github.com/hammercat469/cat/blob/master/ans1.png?raw=true";
+        document.body.appendChild(image1); // 1つ目の画像を追加
+
+        var image2 = document.createElement("img");
+        image2.src = "https://github.com/hammercat469/cat/blob/master/hint1.png?raw=true";
+        document.body.appendChild(image2); // 2つ目の画像を追加
+
+        // キーワードと画像のURLをセッションストレージに保存
+        sessionStorage.setItem('keyword1', 'ヒント↓');
+        sessionStorage.setItem('image1', 'https://github.com/hammercat469/cat/blob/master/hint1.png?raw=true');
+        sessionStorage.setItem('image2', 'https://github.com/hammercat469/cat/blob/master/ans1.png?raw=true');
       } else {
         document.getElementById("result").innerHTML = "不正解です。もう一度お試しください。";
         document.getElementById("userInput").disabled = true;
@@ -18,12 +30,31 @@
         }, 10000);
       }
     }
+    
     window.onload = function() {
+      var storedKeyword = sessionStorage.getItem('keyword1');
+      if (storedKeyword) {
+        document.getElementById('keyword').innerHTML = storedKeyword;
+
+        // 保存された画像があれば表示
+        var storedImage1 = sessionStorage.getItem('image1');
+        var storedImage2 = sessionStorage.getItem('image2');
+        if (storedImage1 && storedImage2) {
+          var image1 = document.createElement("img");
+          image1.src = storedImage1;
+          document.body.appendChild(image1);
+
+          var image2 = document.createElement("img");
+          image2.src = storedImage2;
+          document.body.appendChild(image2);
+        }
+      }
       document.getElementById("userInput").disabled = true;
     };
+
     setTimeout(function() {
-          document.getElementById("userInput").disabled = false;
-        }, 5000);
+      document.getElementById("userInput").disabled = false;
+    }, 5000);
   </script>
 </head>
 <body>
@@ -32,6 +63,7 @@
     <input type="text" id="userInput" placeholder="ワードを入力">
     <button onclick="checkAnswer()">確認</button>
     <p id="result"></p>
+    <p id="keyword"></p>
   </div>
   <a href="1st.html">1</a>
   <a href="2nd.html">2</a>

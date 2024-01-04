@@ -3,6 +3,18 @@
 <head>
   <title>Why are there no cats in the Chinese Zodiac?</title>
   <script>
+    function changeBackgroundColor() {
+      const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+      let index = 0;
+
+      setInterval(() => {
+        document.body.style.backgroundColor = colors[index];
+        index = (index + 1) % colors.length;
+      }, 1000); // 色の変化間隔を調整したい場合は、ここの値を変更してください
+    }
+    window.onload = function() {
+      changeBackgroundColor();
+    };
     function checkAnswer() {
       var userInput = document.getElementById("userInput").value.toLowerCase();
       var correctWord = "16 4 3 5 3 6 6 13 5 13 3 7 4 5 16 3";

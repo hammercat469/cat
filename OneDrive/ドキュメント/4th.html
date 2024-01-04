@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ページ2</title>
+  <title>ページ4</title>
   <script>
     function checkAnswer() {
       var userInput = document.getElementById("userInput").value.toLowerCase();
-      var correctWord = "banana";
+      var correctWord = "32466873";
 
       if (userInput === correctWord) {
-        document.getElementById("result").innerHTML = "正解です！";
+        document.getElementById("result").innerHTML = "正解　ヒント4:選択肢のタイルの色や形を英語にしてみるとよい これが正解できる方ならきっと解けるはず。";
         document.getElementById("image").src = "正解の画像のURL";
       } else {
-        document.getElementById("result").innerHTML = "不正解です。もう一度お試しください。";
+        document.getElementById("result").innerHTML = "不正解です。";
         document.getElementById("userInput").disabled = true;
         setTimeout(function() {
           document.getElementById("userInput").disabled = false;
@@ -26,17 +26,19 @@
         }, 5000);
   </script>
 </head>
-<body>
-  <img id="image" src="画像のURL" alt="画像">
+<body style="background-color: darkslateblue;">
+  <h3>難易度ⅣからⅡ（未テストプレイ）</h3>
+  <h2>見ての通り数独である。ルールも数独と同じ。</h2>
+  <h3>①から⑧に入る数字を順に入力せよ(何も考えなければ4304万通り、少し考えて508万通り、深く考えて?通り)</h3>
+  <img id="image" src="https://github.com/hammercat469/cat/blob/master/56193.jpg?raw=trueL" alt="画像">
   <div>
-    <input type="text" id="userInput" placeholder="ワードを入力">
+    <input type="text" id="userInput" placeholder="回答を入力">
     <button onclick="checkAnswer()">確認</button>
     <p id="result"></p>
   </div>
-  <a href="1st.html">1</a>
-  <a href="2nd.html">2</a>
-  <a href="3rd.html">3</a>
-  <a href="4th.html">4</a>
+  <a href="1st.html">壱</a>
+  <a href="2nd.html">弐</a>
+  <a href="3rd.html">参</a>
   <a href="5th.html">最終問題</a>
 </body>
 </html>

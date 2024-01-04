@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ページ2</title>
+  <title>ページ5</title>
   <script>
     function checkAnswer() {
       var userInput = document.getElementById("userInput").value.toLowerCase();
-      var correctWord = "banana";
+      var correctWord = "16 4 3 5 3 6 6 13 5 13 3 7 4 5 16 3";
 
       if (userInput === correctWord) {
-        document.getElementById("result").innerHTML = "正解です！";
-        document.getElementById("image").src = "正解の画像のURL";
+        document.getElementById("result").innerHTML = "正解 楽しめていただけたでしょうか？  まさかhtmlファイル閲覧したりとかは...してないですよね???       画像のURL:https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG_8m8oT90q5Nwwww6veWS9GQACSwYqIuW-N3eY9zonbholc77dtjHshV6bTJi6ZEUpqUUgMQqLYfEoq2l9Y6nav22Lk1qz1m_CmqiKEVsXYJq7NNnh0QC9brR-6glAOfKTBc-WHoliXuSTtHDKF89vrxekkVSLCfzW8WIi7__njJ_ozt4jeMC7ch2A8SmqoAYk4rq0a0jGXsPcQJ4hSmoJ97N3WshyBIZ2Uro-X7bGbbvMuuNzaHJJ_0z6eCSyhNlH_fC_DAniD8B7FTuP6M6uWSopTbc6OpxPuBN9xVQc-lsHu_pabQCgd4U28SrQY1Sw==/Places-to-visit-in-Kyoto-Kinkakuji-the-Golden-Pavilion.jpg";
+        document.getElementById("image").src = "https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG_8m8oT90q5Nwwww6veWS9GQACSwYqIuW-N3eY9zonbholc77dtjHshV6bTJi6ZEUpqUUgMQqLYfEoq2l9Y6nav22Lk1qz1m_CmqiKEVsXYJq7NNnh0QC9brR-6glAOfKTBc-WHoliXuSTtHDKF89vrxekkVSLCfzW8WIi7__njJ_ozt4jeMC7ch2A8SmqoAYk4rq0a0jGXsPcQJ4hSmoJ97N3WshyBIZ2Uro-X7bGbbvMuuNzaHJJ_0z6eCSyhNlH_fC_DAniD8B7FTuP6M6uWSopTbc6OpxPuBN9xVQc-lsHu_pabQCgd4U28SrQY1Sw==/Places-to-visit-in-Kyoto-Kinkakuji-the-Golden-Pavilion.jpg";
       } else {
-        document.getElementById("result").innerHTML = "不正解です。もう一度お試しください。";
+        document.getElementById("result").innerHTML = "不正解　";
         document.getElementById("userInput").disabled = true;
         setTimeout(function() {
           document.getElementById("userInput").disabled = false;
@@ -26,17 +26,24 @@
         }, 5000);
   </script>
 </head>
-<body>
+<body style="background-color: rgba(255, 255, 255, 0.34);">
+  <h3>難易度Ⅹ⇒ヒントありでⅤ</h3>
+  <h2>左の空白のマスに、右の選択肢にあるタイルを並べよ</h2>
+  <h2>一番上の段の左上から、右、という順に下の段までの回答を半角スペースを入れて入力せよ。何をどう入力するかは解けばわかる。</h2>
+  <h3>1から4の問題を解くとヒントが得られる。難易度が高い程ヒントの質も上がる。4はコスパ最悪なので時間をかけるなら3を推奨</h3>
+  <h6>4以外の問題は8名に解いていただいた、最終問題の改変前の正解者は1人のみ。(感想として3より2の方が難しいというものだった)</h6>
+  <h6>タイルの並べ方パターンは約1.3億通り、そのうち正解となるパターンは2通り</h6>
   <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/final.png?raw=true" alt="画像">
   <div>
-    <input type="text" id="userInput" placeholder="ワードを入力">
+    <input type="text" id="userInput" placeholder="??桁(10の??乗通り)">
     <button onclick="checkAnswer()">確認</button>
     <p id="result"></p>
   </div>
-  <a href="1st.html">1</a>
-  <a href="2nd.html">2</a>
-  <a href="3rd.html">3</a>
-  <a href="4th.html">4</a>
-  <a href="5th.html">最終問題</a>
+  <h2>以下のリンクを押すとどれかの問題に飛ぶ</h2>
+  
+  <a href="2nd.html">??</a>
+  <a href="1st.html">?</a>
+  <a href="4th.html">????</a>
+  <a href="3rd.html">???</a>
 </body>
 </html>

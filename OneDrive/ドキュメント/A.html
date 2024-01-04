@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ブロックの配置</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      background-color: rgb(255, 213, 0);
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* 画面の高さいっぱいに広げる */
+      margin: 0; /* 余白をなくす */
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+  </style>
+</head>
+<body style="background-color:rgb(95, 158, 160)">
+    <div class="centered-text">
+        <h1>解が2つあるけど回答に支障は出ないと思います</h1>
+  <canvas id="myCanvas" width="1000" height="1000"></canvas>
+  <button id="checkButton">check</button>
+  <a href="3rd.html">戻る</a>
+  <script>
+    var canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    const blockSizeX = 80; // ブロックの横幅
+    const blockSizeY = 20; // ブロックの縦幅
+    const blockSizeX2 = 80; // ブロックの横幅
+    const blockSizeY2 = 20; // ブロックの縦幅
+
+
+      // テキストを描画する関数
+      function drawText() {
+      ctx.font = '60px Arial'; // フォントサイズとフォントファミリーを設定
+      ctx.fillStyle = 'black'; // テキストの色を指定
+      ctx.fillText('7', 525, 80); // テキストを指定の位置に描画
+      ctx.fillText('3', 45, 160);
+      ctx.fillText('3', 280, 160); // テキストを指定の位置に描画
+      ctx.fillText('9', 125, 240);
+      ctx.fillText('8', 685, 240);
+      ctx.fillText('4', 365, 320);
+      ctx.fillText('12', 425, 320);
+      ctx.fillText('3', 605, 320);
+      ctx.fillText('3', 45, 400); // テキストを指定の位置に描画
+      ctx.fillText('10', 744, 400);
+      ctx.fillText('8', 205, 560); // テキストを指定の位置に描画
+      ctx.fillText('3', 605, 560);
+      ctx.fillText('2', 45, 640); // テキストを指定の位置に描画
+      ctx.fillText('3', 205, 640);
+      ctx.fillText('4', 445, 640); // テキストを指定の位置に描画
+      ctx.fillText('2', 365, 720);
+      ctx.fillText('6', 125, 800); // テキストを指定の位置に描画
+      ctx.fillText('2', 285, 800);
+      ctx.fillText('4', 525, 800); // テキストを指定の位置に描画
+      ctx.fillText('4', 685, 800);
+
+    }
+
+
+    // Canvas上にテキストを描画
+    drawText();
+    // ブロックの情報を保持する配列
+    const blocks = [];
+
+    // ブロックを描画する関数
+    function drawBlocks() {
+      for (let k = 0; k < 10; k++) {
+        for (let i = 0; i < 10; i++) {
+          const blockX = 10 + blockSizeX * i;
+          const blockY = 10 + blockSizeX * k;
+
+          ctx.strokeRect(blockX, blockY, blockSizeX, blockSizeY);
+          const block = { x: blockX, y: blockY, width: blockSizeX, height: blockSizeY, isRed: false, clickCount: 0 };
+          blocks.push(block);
+        }
+        for (let j = 0; j < 11; j++) {
+          const blockX = 10 + blockSizeX2 * j;
+          const blockY = 10 + blockSizeX2 * k;
+
+          ctx.strokeRect(blockX, blockY, blockSizeY2, blockSizeX2);
+          const block = { x: blockX, y: blockY, width: blockSizeY2, height: blockSizeX2, isRed: false, clickCount: 0 };
+          blocks.push(block);
+        }
+      }
+      for (let i = 0; i < 10; i++) {
+        const blockX = 10 + blockSizeX * i;
+        const blockY = 10 + blockSizeX * 10;
+
+        ctx.strokeRect(blockX, blockY, blockSizeX, blockSizeY);
+        const block = { x: blockX, y: blockY, width: blockSizeX, height: blockSizeY, isRed: false, clickCount: 0 };
+        blocks.push(block);
+      }
+    }
+
+    // マウスクリックイベントを検知して処理を実行
+    canvas.addEventListener('click', function (event) {
+      const mouseX = event.clientX - canvas.getBoundingClientRect().left;
+      const mouseY = event.clientY - canvas.getBoundingClientRect().top;
+
+      // クリックされた座標がどのブロックに該当するか判定
+      for (const block of blocks) {
+        if (mouseX >= block.x && mouseX <= block.x + block.width && mouseY >= block.y && mouseY <= block.y + block.height) {
+          // クリック回数に応じてブロックの状態を切り替えて描画
+          block.clickCount++;
+          block.isRed = block.clickCount % 2 === 1; // 2回クリックごとに変化
+          drawBlock(block);
+          break; // ブロックが一つだけ変化するようにする
+        }
+      }
+    });
+
+    // ブロックを描画
+    drawBlocks();
+
+    // ブロックを描画する関数
+    function drawBlock(block) {
+      ctx.fillStyle = block.isRed ? 'red' : 'rgb(255, 213, 0)';
+      ctx.fillRect(block.x, block.y, block.width, block.height);
+      ctx.strokeRect(block.x, block.y, block.width, block.height);
+    }
+  </script>
+</body>
+</html>
+

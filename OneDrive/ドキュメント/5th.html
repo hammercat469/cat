@@ -10,7 +10,7 @@
       setInterval(() => {
         document.body.style.backgroundColor = colors[index];
         index = (index + 1) % colors.length;
-      }, 3000); // 色の変化間隔を調整したい場合は、ここの値を変更してください
+      }, 60000); // 色の変化間隔を調整したい場合は、ここの値を変更してください
     }
 
     function checkAnswer() {
@@ -37,6 +37,7 @@
   <h3>1から4の問題を解くとヒントが得られる。難易度が高い程ヒントの質も上がる。4はコスパ最悪なので時間をかけるなら3を推奨</h3>
   <h6>4以外の問題は8名に解いていただいた、最終問題の改変前の正解者は1人のみ。(感想として3より2の方が難しいというものだった)</h6>
   <h6>タイルの並べ方パターンは約1.3億通り、そのうち正解となるパターンは2通り</h6>
+<h6>更新 2024/01/04 22:59:15  色の変化を1分にしました</h6>
   <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/final.png?raw=true" alt="画像">
   <div>
     <input type="text" id="userInput" placeholder="??桁(10の??乗通り)">

@@ -4,17 +4,15 @@
   <title>Why are there no cats in the Chinese Zodiac?</title>
   <script>
     function changeBackgroundColor() {
-      const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+      const colors = ['mistyrose','lavender','mintcream','beige','lightskyblue','thistle','aquamarine'];
       let index = 0;
 
       setInterval(() => {
         document.body.style.backgroundColor = colors[index];
         index = (index + 1) % colors.length;
-      }, 1000); // 色の変化間隔を調整したい場合は、ここの値を変更してください
+      }, 3000); // 色の変化間隔を調整したい場合は、ここの値を変更してください
     }
-    window.onload = function() {
-      changeBackgroundColor();
-    };
+
     function checkAnswer() {
       var userInput = document.getElementById("userInput").value.toLowerCase();
       var correctWord = "16 4 3 5 3 6 6 13 5 13 3 7 4 5 16 3";
@@ -30,15 +28,9 @@
         }, 10000);
       }
     }
-    window.onload = function() {
-      document.getElementById("userInput").disabled = true;
-    };
-    setTimeout(function() {
-          document.getElementById("userInput").disabled = false;
-        }, 5000);
   </script>
 </head>
-<body style="background-color: rgba(255, 255, 255, 0.34);">
+<body>
   <h3>難易度Ⅹ⇒ヒントありでⅤ</h3>
   <h2>左の空白のマスに、右の選択肢にあるタイルを並べよ</h2>
   <h2>一番上の段の左上から、右、という順に下の段までの回答を半角スペースを入れて入力せよ。何をどう入力するかは解けばわかる。</h2>
@@ -57,5 +49,15 @@
   <a href="1st.html">?</a>
   <a href="4th.html">????</a>
   <a href="3rd.html">???</a>
-</body>
+
+  <script>
+    // ここに先ほどのJavaScriptコードを追加します
+    window.onload = function() {
+      changeBackgroundColor();
+      document.getElementById("userInput").disabled = true;
+      setTimeout(function() {
+        document.getElementById("userInput").disabled = false;
+      }, 5000);
+    };
+  </script>
 </html>

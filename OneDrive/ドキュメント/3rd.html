@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ページ2</title>
+  <title>ページ3</title>
   <script>
     function checkAnswer() {
       var userInput = document.getElementById("userInput").value.toLowerCase();
-      var correctWord = "banana";
+      var correctWord = "11001000";
 
       if (userInput === correctWord) {
-        document.getElementById("result").innerHTML = "正解です！";
-        document.getElementById("image").src = "正解の画像のURL";
+        document.getElementById("result").innerHTML = "正解 ヒント3:最終問題は魔法陣である(ただどういうルールであのパネルが配置されてるのか? それは4問目を解けば...)";
       } else {
-        document.getElementById("result").innerHTML = "不正解です。もう一度お試しください。";
+        document.getElementById("result").innerHTML = "不正解  多分10秒後に回答できる";
         document.getElementById("userInput").disabled = true;
         setTimeout(function() {
           document.getElementById("userInput").disabled = false;
@@ -26,18 +25,26 @@
         }, 5000);
   </script>
 </head>
-<body>
+<body style="background-color: cadetblue;">
+  <div class="centered-text">
+    <h3>難易度Ⅲ</h3>
+    <h1>一番上の画像の例からルールを導き、二枚目の画像に示す箇所を順に0と1で回答せよ</h1>
+    <h3>ヒント閲覧後　再読み込みで消えるので注意</h3>
+    <h2>※256通りしかないが、すべて入力するのに最大で0.71時間はかかる</h2>
+<h5>書き込み可能な場所を設けましたが、正解判定がバグるので入力しかできません</h5>
+  <a href="A.html">書き込み可能の場所</a>
+  <h6>4時間は粘ったんだけどね...</h6>
   <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/exp_numarea.png?raw=true" alt="画像1">
-  <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/numarea.png?raw=true" alt="画像2">
+  <img id="image" src="https://github.com/hammercat469/cat/blob/master/%E5%9B%9E%E7%AD%94%E6%89%8B%E9%A0%86.png?raw=true" alt="画像2">
+  <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/numarea.png?raw=true" alt="画像3">
   <div>
-    <input type="text" id="userInput" placeholder="ワードを入力">
-    <button onclick="checkAnswer()">確認</button>
+    <input type="text" id="userInput" placeholder="回答を入力(半角(｀^´))">
+    <button onclick="checkAnswer()"></button>
     <p id="result"></p>
   </div>
-  <a href="1st.html">1</a>
-  <a href="2nd.html">2</a>
-  <a href="3rd.html">3</a>
-  <a href="4th.html">4</a>
+  <a href="1st.html">①</a>
+  <a href="2nd.html">②</a>
+  <a href="4th.html">④</a>
   <a href="5th.html">最終問題</a>
 </body>
 </html>

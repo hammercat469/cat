@@ -5,10 +5,10 @@
   <script>
     function checkAnswer() {
       var userInput = document.getElementById("userInput").value.toLowerCase();
-      var correctWord = "123";
+      var correctWord = "2021";
 
       if (userInput === correctWord) {
-        document.getElementById("result").innerHTML = "正解   ヒントは下部に表示されてます";
+        document.getElementById("result").innerHTML = "正解   ヒントは下部に表示されてます　　2024なんかにすると思った?";
 
         var image1 = document.createElement("img");
         image1.src = "https://github.com/hammercat469/cat/blob/master/ans1.png?raw=true";
@@ -23,7 +23,7 @@
         sessionStorage.setItem('image1', 'https://github.com/hammercat469/cat/blob/master/hint1.png?raw=true');
         sessionStorage.setItem('image2', 'https://github.com/hammercat469/cat/blob/master/ans1.png?raw=true');
       } else {
-        document.getElementById("result").innerHTML = "不正解です。もう一度お試しください。";
+        document.getElementById("result").innerHTML = "不正解　多分10秒後に回答できる";
         document.getElementById("userInput").disabled = true;
         setTimeout(function() {
           document.getElementById("userInput").disabled = false;
@@ -57,15 +57,17 @@
     }, 5000);
   </script>
 </head>
-<body>
+<body style="background-color: darkolivegreen;">
+  <h3>難易度Ⅰ</h3>
+  <h2>画像に示す迷路を黄色印から赤印までを正規ルートのみを通った場合、曲がった回数は何回か?</h2>
+  <h3>その回数を47倍した数値を入力せよ</h3>
   <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/maze.png?raw=true" alt="画像">
   <div>
-    <input type="text" id="userInput" placeholder="ワードを入力">
+    <input type="text" id="userInput" placeholder="回答を入力(半角)">
     <button onclick="checkAnswer()">確認</button>
     <p id="result"></p>
     <p id="keyword"></p>
   </div>
-  <a href="1st.html">1</a>
   <a href="2nd.html">2</a>
   <a href="3rd.html">3</a>
   <a href="4th.html">4</a>

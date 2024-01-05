@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>ページ4</title>
+  <style>.c{
+  color:white;
+  }</style>
   <script>
     function checkAnswer() {
       var userInput = document.getElementById("userInput").value.toLowerCase();
@@ -27,19 +30,19 @@
   </script>
 </head>
 <body style="background-color: darkslateblue;">
-  <h3>問題4  難易度ⅣからⅡ（未テストプレイ）</h3>
-  <h2>見ての通り数独である。ルールも数独と同じ。</h2>
-  <h3>①から⑧に入る数字を順に入力せよ(何も考えなければ4304万通り、少し考えて508万通り、深く考えて?通り)</h3>
+  <h3 class="c">問題4  難易度ⅣからⅡ（未テストプレイ）</h3>
+  <h2 class="c">見ての通り数独である。ルールも数独と同じ。</h2>
+  <h3 class="c">①から⑧に入る数字を順に入力せよ(何も考えなければ4304万通り、少し考えて508万通り、深く考えて?通り)</h3>
   <img id="image" src="https://github.com/hammercat469/cat/blob/master/56193.jpg?raw=trueL" alt="画像">
   <div>
     <input type="text" id="userInput" placeholder="回答を入力">
-    <button onclick="checkAnswer()">確認</button>
+    <button onclick="checkAnswer()">(˙꒳​˙)押すの？</button>
     <p id="result"></p>
   </div>
   <a href="1st.html">壱</a>
   <a href="2nd.html">弐</a>
   <a href="3rd.html">参</a>
   <a href="5th.html">最終問題</a>
-  <h6>4問目だけ解いて分かる人は居ないと思うので、3と4を正解したら解けるような難易度にしてます</h6>
+  <h6 class="c">4問目だけ解いて分かる人は居ないと思うので、3と4を正解したら解けるような難易度にしてます</h6>
 </body>
 </html>

@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>ページ1</title>
+  <style>.c{
+  color: #adff2f; /* 16進数カラーコード */
+
+  }</style>
   <script>
     function checkAnswer() {
       var userInput = document.getElementById("userInput").value.toLowerCase();
@@ -58,9 +62,9 @@
   </script>
 </head>
 <body style="background-color: darkolivegreen;">
-  <h3>問題1  難易度Ⅰ</h3>
-  <h2>画像に示す迷路を黄色印から赤印までを正規ルートのみを通った場合、曲がった回数は何回か?</h2>
-  <h3>その回数を47倍した数値を入力せよ</h3>
+  <h3 class="c">問題1  難易度Ⅰ</h3>
+  <h2 class="c">画像に示す迷路を黄色印から赤印まで(逆でも良い)を正規ルートのみを通った場合、曲がった回数は何回か?</h2>
+  <h3 class="c">その回数を47倍した数値を入力せよ</h3>
   <img id="image" src="https://github.com/hammercat469/cat/blob/master/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/maze.png?raw=true" alt="画像">
   <div>
     <input type="text" id="userInput" placeholder="回答を入力(半角)">

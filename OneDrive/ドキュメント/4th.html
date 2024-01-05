@@ -5,29 +5,45 @@
   <style>.c{
   color:white;
   }</style>
-  <script>
-    function checkAnswer() {
-      var userInput = document.getElementById("userInput").value.toLowerCase();
-      var correctWord = "32466873";
+  <style>
+  #result {
+    color: white; /* 正解時のテキストカラー */
+  }
 
-      if (userInput === correctWord) {
-        document.getElementById("result").innerHTML = "正解　ヒント4:選択肢のタイルの色や形を英語にしてみるとよい これが正解できる方ならきっと解けるはず。";
-        document.getElementById("image").src = "正解の画像のURL";
-      } else {
-        document.getElementById("result").innerHTML = "不正解です。";
-        document.getElementById("userInput").disabled = true;
-        setTimeout(function() {
-          document.getElementById("userInput").disabled = false;
-        }, 10000);
-      }
-    }
-    window.onload = function() {
+  #result.wrong {
+    color: white; /* 不正解時のテキストカラー */
+  }
+</style>
+
+<script>
+  function checkAnswer() {
+    var userInput = document.getElementById("userInput").value.toLowerCase();
+    var correctWord = "32466873";
+    var resultElement = document.getElementById("result");
+
+    if (userInput === correctWord) {
+      resultElement.innerHTML = "正解 ヒント4:選択肢のタイルの色や形を英語にしてみるとよい これが正解できる方ならきっと解けるはず。";
+      resultElement.className = ""; // デフォルトのクラスを設定
+      document.getElementById("image").src = "正解の画像のURL";
+    } else {
+      resultElement.innerHTML = "不正解です。";
+      resultElement.className = "wrong"; // 不正解時のクラスを設定
       document.getElementById("userInput").disabled = true;
-    };
-    setTimeout(function() {
-          document.getElementById("userInput").disabled = false;
-        }, 5000);
-  </script>
+      setTimeout(function () {
+        document.getElementById("userInput").disabled = false;
+      }, 10000);
+    }
+  }
+
+  window.onload = function () {
+    document.getElementById("userInput").disabled = true;
+  };
+
+  setTimeout(function () {
+    document.getElementById("userInput").disabled = false;
+  }, 5000);
+</script>
+
 </head>
 <body style="background-color: darkslateblue;">
   <h3 class="c">問題4  難易度ⅣからⅡ（未テストプレイ）</h3>

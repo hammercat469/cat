@@ -18,6 +18,20 @@
     .centered-text {
       text-align: center;
     }
+
+    /* スタイルは必要に応じて調整してください */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
   </style>
 </head>
 <body style="background-color:rgb(95, 158, 100)">
@@ -26,7 +40,11 @@
       <h2>注意  再読み込みすると入力データは消えます スクリーンショットの保存をおすすめします</h2>
       <h3>タップで線を引けます それだけ</h3>
   <canvas id="myCanvas" width="1000" height="1000"></canvas>
-  <button id="checkButton">check</button>
+  <button onclick="showPopup()">押しても何も起こらないよ(´・ω・)</button>
+      <div id="popup" class="popup">
+  <p>ポップアップの内容</p>
+  <button onclick="closePopup()">閉じる</button>
+</div>
   <a href="3rd.html">戻る</a>
   <script>
     var canvas = document.getElementById('myCanvas');
@@ -126,6 +144,20 @@
       ctx.fillRect(block.x, block.y, block.width, block.height);
       ctx.strokeRect(block.x, block.y, block.width, block.height);
     }
+
+      function showPopup() {
+    // ポップアップの要素を取得
+    var popup = document.getElementById('popup');
+    // ポップアップを表示
+    popup.style.display = 'block';
+  }
+
+  function closePopup() {
+    // ポップアップの要素を取得
+    var popup = document.getElementById('popup');
+    // ポップアップを非表示
+    popup.style.display = 'none';
+  }
   </script>
 </body>
 </html>
